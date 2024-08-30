@@ -3,6 +3,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
+            NotchView() // Abgerundete Notch-Ansicht einfügen
+                .frame(width: 300, height: 70)
+                .padding(.top, 10)
+            
             HStack {
                 Text("Gnocchi Knotenleiste")
                     .font(.headline)

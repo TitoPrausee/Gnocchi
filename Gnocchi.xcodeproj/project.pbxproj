@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B926AAAF2C81C779005EEEC2 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926AAAE2C81C779005EEEC2 /* RoundedCorner.swift */; };
+		B926AAB32C81EA38005EEEC2 /* RoundedNotchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926AAB22C81EA38005EEEC2 /* RoundedNotchView.swift */; };
+		B926AAB52C81EA84005EEEC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B926AAB42C81EA84005EEEC2 /* ViewController.swift */; };
 		B981FB692C81B70600E2E967 /* GnocchiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981FB682C81B70600E2E967 /* GnocchiApp.swift */; };
 		B981FB6B2C81B70600E2E967 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B981FB6A2C81B70600E2E967 /* ContentView.swift */; };
 		B981FB6D2C81B70800E2E967 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B981FB6C2C81B70800E2E967 /* Assets.xcassets */; };
@@ -36,7 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B926AAAE2C81C779005EEEC2 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		B926AAB22C81EA38005EEEC2 /* RoundedNotchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedNotchView.swift; sourceTree = "<group>"; };
+		B926AAB42C81EA84005EEEC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B981FB652C81B70500E2E967 /* Gnocchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnocchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B981FB682C81B70600E2E967 /* GnocchiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnocchiApp.swift; sourceTree = "<group>"; };
 		B981FB6A2C81B70600E2E967 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,7 +104,8 @@
 				B981FB682C81B70600E2E967 /* GnocchiApp.swift */,
 				B981FB932C81B94E00E2E967 /* NotchView.swift */,
 				B981FB6A2C81B70600E2E967 /* ContentView.swift */,
-				B926AAAE2C81C779005EEEC2 /* RoundedCorner.swift */,
+				B926AAB42C81EA84005EEEC2 /* ViewController.swift */,
+				B926AAB22C81EA38005EEEC2 /* RoundedNotchView.swift */,
 				B981FB6C2C81B70800E2E967 /* Assets.xcassets */,
 				B981FB712C81B70800E2E967 /* Gnocchi.entitlements */,
 				B981FB6E2C81B70800E2E967 /* Preview Content */,
@@ -265,8 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B926AAAF2C81C779005EEEC2 /* RoundedCorner.swift in Sources */,
+				B926AAB52C81EA84005EEEC2 /* ViewController.swift in Sources */,
 				B981FB6B2C81B70600E2E967 /* ContentView.swift in Sources */,
+				B926AAB32C81EA38005EEEC2 /* RoundedNotchView.swift in Sources */,
 				B981FB692C81B70600E2E967 /* GnocchiApp.swift in Sources */,
 				B981FB942C81B94E00E2E967 /* NotchView.swift in Sources */,
 			);

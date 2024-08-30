@@ -25,10 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered, defer: false)
         
-        window.isOpaque = true
+        window.isOpaque = false // Macht den Fensterhintergrund transparent
         window.alphaValue = 1.0
         window.hasShadow = false
-        window.backgroundColor = NSColor.black.withAlphaComponent(1.0)
+        window.backgroundColor = .clear // Setzt den Fensterhintergrund auf transparent
         window.level = .statusBar
         window.isMovableByWindowBackground = false
         window.collectionBehavior = [.canJoinAllSpaces, .stationary]
@@ -38,4 +38,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
     }
+
 }
