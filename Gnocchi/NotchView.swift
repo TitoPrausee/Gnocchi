@@ -2,29 +2,24 @@ import SwiftUI
 
 struct NotchView: View {
     var body: some View {
-        VStack {
-            // Notch Leiste
-            HStack {
-                Text("Gnocchi Notch")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding(.leading, 20)
-                Spacer()
-            }
-            .frame(height: 30)
-            .background(Color.black.opacity(0.8))
-            .cornerRadius(15)
-            .padding(.top, 10)
-
-            Spacer() // Füllt den restlichen Platz
+        ZStack {
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 300, height: 70)
+                .foregroundColor(.black)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.black, lineWidth: 4) // Optionaler Rahmen für Klarheit
+                )
+            Text("Gnocchi Notch")
+                .foregroundColor(.white)
+                .padding(.top, 10)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.clear) // Hintergrund der App
     }
 }
 
 struct NotchView_Previews: PreviewProvider {
     static var previews: some View {
         NotchView()
+            .frame(width: 300, height: 70)
     }
 }

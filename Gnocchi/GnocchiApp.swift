@@ -5,7 +5,6 @@ struct GnocchiApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        // Keine Fenstergruppe erstellen
         Settings {
             EmptyView()
         }
@@ -16,27 +15,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Verzögerung hinzufügen (z.B. 5 Sekunden)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.showNotchView()
-        }
+        self.showNotchView()
     }
 
     func showNotchView() {
         let contentView = NotchView()
-
-        // Create the window and set the content view
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 300, height: 50),
+            contentRect: NSRect(x: 0, y: 0, width: 300, height: 70),
             styleMask: [.borderless, .nonactivatingPanel],
             backing: .buffered, defer: false)
         
-        window.isOpaque = false
-        window.backgroundColor = .clear
-        window.level = .floating
-        window.isMovableByWindowBackground = true
+        window.isOpaque = true
+        window.alphaValue = 1.0
+        window.hasShadow = false
+        window.backgroundColor = NSColor.black.withAlphaComponent(1.0)
+        window.level = .statusBar
+        window.isMovableByWindowBackground = false
         window.collectionBehavior = [.canJoinAllSpaces, .stationary]
-        window.center()
+        
+        window.setFrameTopLeftPoint(NSPoint(x: (NSScreen.main!.frame.width - 300) / 2, y: NSScreen.main!.frame.height))
+        
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
     }
