@@ -1,16 +1,24 @@
 import SwiftUI
 
 struct NotchView: View {
+    @State private var isHovered = false
+
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             CustomCorners(cornerRadius: 20, corners: [.bottomLeft, .bottomRight])
-                .frame(width: 300, height: 70)
-                .foregroundColor(.black)
-            Text("Gnocchi Notch")
-                .foregroundColor(.white)
-                .padding(.top, 10)
+                .fill(Color.black)
+                .frame(width: 200, height: isHovered ? 60 : 50)
+                .offset(y: isHovered ? 0 : 0) // Keine Verschiebung am Anfang
+                .onHover { hovering in
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        isHovered = hovering
+                    }
+                }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.top, 0) // Sicherstellen, dass die Notch am oberen Rand bleibt
         .background(Color.clear)
+        .clipped()
     }
 }
 
@@ -30,7 +38,7 @@ struct CustomCorners: Shape {
         let bottomLeft = corners.contains(.bottomLeft) ? cornerRadius : 0
         let bottomRight = corners.contains(.bottomRight) ? cornerRadius : 0
 
-        path.move(to: CGPoint(x: rect.minX, y: rect.midY))
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
         path.addArc(
             center: CGPoint(x: rect.minX + topLeft, y: rect.minY + topLeft),
             radius: topLeft,
@@ -71,6 +79,6 @@ struct CustomCorners: Shape {
 struct NotchView_Previews: PreviewProvider {
     static var previews: some View {
         NotchView()
-            .frame(width: 300, height: 70)
+            .frame(width: 200, height: 50)
     }
 }
